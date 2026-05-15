@@ -2,263 +2,401 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>POS Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Restaurant Management System - Manage orders, menu items, customers and more.">
+    <title>Restaurant Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
 <body>
 
-<!-- Login -->
-
+<!-- = LOGIN SECTION -->
 <section id="login_section">
-<form class="w-50 m-auto">
-<div class="login-container">
-    <div class="left-panel">
-        <h1>WELCOME!</h1>
-        <p>The most popular POS System is here.</p>
+    <div class="login-container">
 
-    </div>
+        <div class="left-panel">
+            <div class="brand-logo">
+                <span class="logo-icon">🍽️</span>
+                <span class="logo-text">RestaurantPro</span>
+            </div>
+            <h1>Welcome To My System !</h1>
+            <p class="tagline">Your all-in-one restaurant management platform. Handle orders, menus, and guests — all from one place.</p>
 
-    <div class="right-panel">
-        <div class="login-box">
-            <h2>Hello!</h2>
-            <p>Sign in to Get Started</p>
-
-            <input type="text" id="username" placeholder="Username">
-            <input type="password" id="password" placeholder="Password">
-
-            <button type="button" id="login_btn">Login</button>
+            <div class="feature-list">
+                <div class="feature-item">✅ Real-time Order Tracking</div>
+                <div class="feature-item">✅ Menu & Inventory Management</div>
+                <div class="feature-item">✅ Guest & Table Management</div>
+                <div class="feature-item">✅ Revenue Analytics Dashboard</div>
+            </div>
         </div>
+
+        <div class="right-panel">
+            <div class="login-box">
+                <div class="login-header">
+                    <span class="login-icon">🔑</span>
+                    <h2>Sign In</h2>
+                    <p>Enter your credentials to access the dashboard</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">👤</span>
+                        <input type="text" id="username" placeholder="Enter your username">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">🔒</span>
+                        <input type="password" id="password" placeholder="Enter your password">
+                    </div>
+                </div>
+
+                <button type="button" id="login_btn">
+                    <span>Login to Dashboard</span>
+                    <span class="btn-arrow">→</span>
+                </button>
+
+
+            </div>
+        </div>
+
     </div>
-</div>
-</form>
 </section>
 
 
-<!-- Sidebar -->
-
-
+<!--DASHBOARD SECTION -->
 <section id="dashboard_section" style="display:none;">
-<form class="w-50 m-auto">
+    <div class="dashboard">
 
-<div class="dashboard">
-
-    <aside class="sidebar">
-        <h2>DASHBOARD</h2>
-        <ul>
-            <li id="dashboard_tab">🏠 Dashboard</li>
-            <li id="customer_tab">👤 Customer</li>
-            <li id="item_tab">📦 Items</li>
-            <li id="order_tab">🧾 Orders</li>
-            <li id="logout_btn">🚪 Logout</li>
-        </ul>
-    </aside>
-
-    <main class="main-content">
-
-        <section id="dashboard_content" class="content">
-            <h1 id="d1">Dashboard</h1>
-            <div class="container-fluid p-4">
-                <div class="row g-4">
-
-                    <!-- Line Chart -->
-                    <div class="col-md-7">
-                        <div class="card-box">
-                            <div class="title">📈 Revenue Overview (Last 7 Days)</div>
-                            <img src="assets/lib/piechart.png" class="card-img">
-                            <canvas id="revenueChart"></canvas>
-                        </div>
-                    </div>
-
-                    <!-- Pie Chart -->
-                    <div class="col-md-5">
-                        <div class="card-box">
-                            <div class="title">📊 Order Status Distribution</div>
-                            <img src="assets/lib/Barchart.png" class="card-img">
-                            <canvas id="orderChart"></canvas>
-                        </div>
-                    </div>
-
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <span class="sidebar-logo">🍽️</span>
+                <div>
+                    <span class="sidebar-title">RestaurantPro</span>
+                    <span class="sidebar-sub">Management</span>
                 </div>
             </div>
-        </section>
 
-       <!-- Customer Part -->
-        <section id="customer_content" class="content p-5">
+            <div class="sidebar-label">MAIN MENU</div>
+            <ul>
+                <li id="dashboard_tab" class="active">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </li>
+                <li id="customer_tab">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Guests</span>
+                </li>
+                <li id="item_tab">
+                    <span class="nav-icon">🍜</span>
+                    <span class="nav-text">Menu Items</span>
+                </li>
+                <li id="order_tab">
+                    <span class="nav-icon">🧾</span>
+                    <span class="nav-text">Orders</span>
+                </li>
+            </ul>
 
-            <form class="w-50 m-auto">
-                <h1 class="text-center">Customer Management</h1>
+            <div class="sidebar-divider"></div>
 
-                <div class="mb-3">
-                    <label for="customer_id_input" class="form-label">Customer ID</label>
-                    <input type="text" class="form-control" id="customer_id_input">
+            <ul>
+                <li id="logout_btn" class="logout-item">
+                    <span class="nav-icon">🚪</span>
+                    <span class="nav-text">Logout</span>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <span>© 2025 RestaurantPro</span>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Bar -->
+            <div class="topbar">
+                <div class="topbar-left">
+                    <h2 class="page-title" id="page_title">Dashboard</h2>
+                </div>
+                <div class="topbar-right">
+                    <div class="topbar-badge">
+                        <span>🟢 Open</span>
+                    </div>
+                    <div class="topbar-user">
+                        <span class="user-avatar">👨‍🍳</span>
+                        <span class="user-name">Admin</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DASHBOARD CONTENT  -->
+            <section id="dashboard_content" class="content">
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card stat-orange">
+                        <div class="stat-icon">🍽️</div>
+                        <div class="stat-info">
+                            <span class="stat-label">Today's Orders</span>
+                            <span class="stat-value">48</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-green">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-info">
+                            <span class="stat-label">Revenue Today</span>
+                            <span class="stat-value">Rs 24,500</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-blue">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <span class="stat-label">Total Guests</span>
+                            <span class="stat-value">132</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-purple">
+                        <div class="stat-icon">🍜</div>
+                        <div class="stat-info">
+                            <span class="stat-label">Menu Items</span>
+                            <span class="stat-value">56</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="mb-3">
-                    <label for="customer_name_input" class="form-label">Customer Name</label>
-                    <input type="text" class="form-control" id="customer_name_input">
+                <!-- Charts Row -->
+                <div class="charts-grid">
+                    <div class="card-box">
+                        <div class="card-box-header">
+                            <span class="card-box-title">📊 Order Status Distribution</span>
+                        </div>
+                        <canvas id="orderChart"></canvas>
+                    </div>
+                    <div class="card-box">
+                        <div class="card-box-header">
+                            <span class="card-box-title">📈 Revenue Overview (Last 7 Days)</span>
+                        </div>
+                        <canvas id="revenueChart"></canvas>
+                    </div>
                 </div>
-
-                <div class="mb-3">
-                    <label for="customer_phone_input" class="form-label">Phone</label>
-                    <input type="text" class="form-control" id="customer_phone_input">
-                </div>
-
-                <div class="mb-3">
-                    <label for="customer_address_input" class="form-label">Address</label>
-                    <textarea class="form-control" id="customer_address_input" style="height: 100px"></textarea>
-                </div>
-
-                <div class="text-end">
-                    <button type="button" id="customer_save_btn" class="btn btn-success">Save</button>
-                    <button type="button" id="customer_update_btn" class="btn btn-primary">Update</button>
-                    <button type="button" id="customer_delete_btn" class="btn btn-danger">Delete</button>
-                    <button type="reset" id="customer_reset_btn" class="btn btn-info">Reset</button>
-                </div>
-            </form>
-
-            <table class="table m-5">
-                <thead>
-                <tr>
-                    <th>#ID</th>
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                </tr>
-                </thead>
-                <tbody id="customer_tbody"></tbody>
-            </table>
-
-        </section>
-
-        <!-- Item Part -->
-
-            <section id="item_content" class="content p-5">
-
-                <form class="w-50 m-auto">
-                    <h1 class="text-center">Item Management</h1>
-
-                    <div class="mb-3">
-                        <label class="form-label">Item ID</label>
-                        <input type="text" class="form-control" id="item_id_input">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Item Name</label>
-                        <input type="text" class="form-control" id="item_name_input">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Quantity</label>
-                        <input type="number" class="form-control" id="item_qty_input">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Unit</label>
-                        <input type="text" class="form-control" id="item_unit_input">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Price</label>
-                        <input type="text" class="form-control" id="item_price_input">
-                    </div>
-
-                    <div class="text-end">
-                        <button type="button" id="item_save_btn" class="btn btn-success">Save</button>
-                        <button type="button" id="item_update_btn" class="btn btn-primary">Update</button>
-                        <button type="button" id="item_delete_btn" class="btn btn-danger">Delete</button>
-                        <button type="reset" id="item_reset_btn" class="btn btn-secondary">Reset</button>
-                    </div>
-                </form>
-
-                <table class="table m-5">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Qty</th>
-                        <th>Unit</th>
-                        <th>Price</th>
-                    </tr>
-                    </thead>
-                    <tbody id="item_tbody"></tbody>
-                </table>
 
             </section>
 
-        <!-- Order Part -->
+            <!--  GUEST MANAGEMENT  -->
+            <section id="customer_content" class="content">
 
-        <section id="order_content" class="content p-4">
-
-            <h1>Order Management</h1>
-
-            <!-- Customer + Item Select -->
-            <div class="row mb-3">
-
-                <div class="col-md-4">
-                    <label>Customer</label>
-                    <select id="order_customer" class="form-control"></select>
+                <div class="section-header">
+                    <h1>👥 Guest Management</h1>
+                    <p>Add, update and manage restaurant guests</p>
                 </div>
 
-                <div class="col-md-4">
-                    <label>Item</label>
-                    <select id="order_item" class="form-control"></select>
+                <div class="form-card">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="customer_id_input">Guest ID</label>
+                            <input type="text" class="form-control" id="customer_id_input" placeholder="Auto-generated">
+                        </div>
+                        <div class="form-group">
+                            <label for="customer_name_input">Full Name</label>
+                            <input type="text" class="form-control" id="customer_name_input" placeholder="Enter guest name">
+                        </div>
+                        <div class="form-group">
+                            <label for="customer_phone_input">Phone Number</label>
+                            <input type="text" class="form-control" id="customer_phone_input" placeholder="e.g. 077XXXXXXX">
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="customer_address_input">Address</label>
+                            <textarea class="form-control" id="customer_address_input" placeholder="Enter full address"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="customer_save_btn" class="btn btn-success">💾 Save</button>
+                        <button type="button" id="customer_update_btn" class="btn btn-primary">✏️ Update</button>
+                        <button type="button" id="customer_delete_btn" class="btn btn-danger">🗑️ Delete</button>
+                        <button type="reset" id="customer_reset_btn" class="btn btn-secondary">↺ Reset</button>
+                    </div>
                 </div>
 
-                <div class="col-md-2">
-                    <label>Qty</label>
-                    <input type="number" id="order_qty" class="form-control">
+                <div class="table-card">
+                    <div class="table-header-row">
+                        <h3>Guest Records</h3>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#ID</th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                </tr>
+                            </thead>
+                            <tbody id="customer_tbody"></tbody>
+                        </table>
+                    </div>
                 </div>
 
-                <div class="col-md-2 d-flex align-items-end">
-                    <button type="button" id="add_item_btn" class="btn btn-success w-100">Add</button>
+            </section>
+
+            <!--  MENU ITEM MANAGEMENT  -->
+            <section id="item_content" class="content">
+
+                <div class="section-header">
+                    <h1>🍜 Menu Management</h1>
+                    <p>Manage dishes, prices and availability</p>
                 </div>
 
-            </div>
+                <div class="form-card">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Item ID</label>
+                            <input type="text" class="form-control" id="item_id_input" placeholder="Auto-generated">
+                        </div>
+                        <div class="form-group">
+                            <label>Dish Name</label>
+                            <input type="text" class="form-control" id="item_name_input" placeholder="e.g. Grilled Chicken">
+                        </div>
+                        <div class="form-group">
+                            <label>Stock Quantity</label>
+                            <input type="number" class="form-control" id="item_qty_input" placeholder="e.g. 50">
+                        </div>
+                        <div class="form-group">
+                            <label>Unit</label>
+                            <input type="text" class="form-control" id="item_unit_input" placeholder="e.g. Plate, Bowl">
+                        </div>
+                        <div class="form-group">
+                            <label>Price (Rs)</label>
+                            <input type="text" class="form-control" id="item_price_input" placeholder="e.g. 850.00">
+                        </div>
+                    </div>
 
-            <!-- Cart Table -->
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Qty</th>
-                    <th>Price</th>
-                    <th>Total</th>
-                </tr>
-                </thead>
-                <tbody id="cart_tbody"></tbody>
-            </table>
+                    <div class="form-actions">
+                        <button type="button" id="item_save_btn" class="btn btn-success">💾 Save</button>
+                        <button type="button" id="item_update_btn" class="btn btn-primary">✏️ Update</button>
+                        <button type="button" id="item_delete_btn" class="btn btn-danger">🗑️ Delete</button>
+                        <button type="reset" id="item_reset_btn" class="btn btn-secondary">↺ Reset</button>
+                    </div>
+                </div>
 
-            <h3 class="text-end">Grand Total: Rs <span id="grand_total">0</span></h3>
+                <div class="table-card">
+                    <div class="table-header-row">
+                        <h3>Menu Items</h3>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Dish Name</th>
+                                    <th>Qty</th>
+                                    <th>Unit</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="item_tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
 
-            <div class="text-end">
-                <button type="button" id="place_order_btn" class="btn btn-primary">Place Order</button>
-            </div>
+            </section>
 
-            <hr>
+            <!--  ORDER MANAGEMENT-->
+            <section id="order_content" class="content">
 
-            <!-- Order History -->
-            <h3>Order History</h3>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Order ID</th>
-                    <th>Customer</th>
-                    <th>Total</th>
-                    <th>Date</th>
-                </tr>
-                </thead>
-                <tbody id="order_tbody"></tbody>
-            </table>
+                <div class="section-header">
+                    <h1>🧾 Order Management</h1>
+                    <p>Create and track restaurant orders in real-time</p>
+                </div>
 
-        </section>
+                <!-- Order Form -->
+                <div class="form-card">
+                    <div class="order-form-grid">
+                        <div class="form-group">
+                            <label>Guest</label>
+                            <select id="order_customer" class="form-control">
+                                <option value="">Select Guest</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Menu Item</label>
+                            <select id="order_item" class="form-control">
+                                <option value="">Select Dish</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Quantity</label>
+                            <input type="number" id="order_qty" class="form-control" placeholder="Qty" min="1">
+                        </div>
+                        <div class="form-group form-group-btn">
+                            <label>&nbsp;</label>
+                            <button type="button" id="add_item_btn" class="btn btn-success">+ Add Item</button>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Cart -->
+                <div class="table-card">
+                    <div class="table-header-row">
+                        <h3>🛒 Current Order</h3>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart_tbody"></tbody>
+                        </table>
+                    </div>
 
+                    <div class="order-footer">
+                        <div class="grand-total-box">
+                            <span class="grand-label">Grand Total</span>
+                            <span class="grand-value">Rs <span id="grand_total">0.00</span></span>
+                        </div>
+                        <button type="button" id="place_order_btn" class="btn btn-primary">
+                            🍽️ Place Order
+                        </button>
+                    </div>
+                </div>
 
-    </main>
-</div>
-</form>
+                <!-- Order History -->
+                <div class="table-card" style="margin-top: 24px;">
+                    <div class="table-header-row">
+                        <h3>📋 Order History</h3>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Guest</th>
+                                    <th>Total</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="order_tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
 </section>
-
 
 
 <script src="assets/lib/jquery-4.0.0.min.js"></script>
@@ -275,7 +413,6 @@
 <script type="module" src="model/CustomerModel.js"></script>
 <script type="module" src="model/ItemModel.js"></script>
 <script type="module" src="model/OrderModel.js"></script>
-
 
 </body>
 </html>

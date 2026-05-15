@@ -1,31 +1,30 @@
-$(".content").hide();
-$("#dashboard_content").show();
+$(".content").removeClass("active").hide();
+$("#dashboard_content").addClass("active").show();
 
-$("#dashboard_tab").click(()=>{
-    $(".content").hide();
-    $("#dashboard_content").show();
-});
+// Page title map
+const pageTitles = {
+    dashboard_tab: "📊 Dashboard",
+    customer_tab:  "👥 Guest Management",
+    item_tab:      "🍜 Menu Management",
+    order_tab:     "🧾 Order Management"
+};
 
-$("#customer_tab").click(()=>{
-    $(".content").hide();
-    $("#customer_content").show();
-});
+function switchTab(tabId, contentId) {
+    $(".content").removeClass("active").hide();
+    $("#" + contentId).addClass("active").show();
 
-$("#item_tab").click(()=>{
-    $(".content").hide();
-    $("#item_content").show();
-});
+    $(".sidebar li").removeClass("active");
+    $("#" + tabId).addClass("active");
 
-$("#order_tab").click(()=>{
-    $(".content").hide();
-    $("#order_content").show();
-});
+    // Update topbar title
+    $("#page_title").text(pageTitles[tabId] || "Dashboard");
+}
 
-$('#logout_btn').on('click', function () {
+$("#dashboard_tab").click(() => switchTab("dashboard_tab", "dashboard_content"));
+$("#customer_tab").click(() => switchTab("customer_tab", "customer_content"));
+$("#item_tab").click(() => switchTab("item_tab", "item_content"));
+$("#order_tab").click(() => switchTab("order_tab", "order_content"));
+
+$("#logout_btn").on("click", function () {
     location.reload();
-});
-
-$('.sidebar li').on('click', function () {
-    $('.sidebar li').removeClass('active');
-    $(this).addClass('active');
 });

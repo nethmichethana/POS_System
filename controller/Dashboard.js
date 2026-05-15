@@ -1,4 +1,4 @@
-// ---------------- LINE CHART ----------------
+//  LINE CHART
 const ctx1 = document.getElementById('revenueChart');
 
 new Chart(ctx1, {
@@ -26,7 +26,7 @@ new Chart(ctx1, {
 });
 
 
-// ---------------- PIE CHART ----------------
+// PIE CHART
 const ctx2 = document.getElementById('orderChart');
 
 new Chart(ctx2, {

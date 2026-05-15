@@ -57,7 +57,7 @@ $('#customer_save_btn').on('click', function () {
     let phone = $('#customer_phone_input').val();
     let address = $('#customer_address_input').val();
 
-    // validation stop
+
     if (id == "") {
         Swal.fire({icon:"error", title:"Invalid ID"});
         return;
