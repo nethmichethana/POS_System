@@ -1,25 +1,29 @@
-# POS System (Point of Sale)
+# Restaurant POS System
 
-The **POS System** is a software application designed to streamline sales transactions and simplify daily business operations. It helps businesses manage sales, products, inventory, and transaction records through an organized and user-friendly interface.
+The **Restaurant POS System** is a software application designed to streamline restaurant operations by simplifying order processing, sales transactions, menu management, and billing. It provides an efficient way to manage daily restaurant activities through a user-friendly interface.
 
-This project demonstrates my practical software development skills, including application design, business process automation, data management, and the implementation of functional business solutions.
+This project aims to improve operational efficiency, minimize manual errors, and enhance the overall order management and billing process in a restaurant environment.
 
 ## Key Features
-- Product and inventory management
-- Sales transaction processing
-- Real-time bill and receipt generation
-- Customer and sales record management
-- User-friendly interface for efficient operations
-- Organized data handling and reporting
+
+- **Menu Management** – Manage food items, prices, and menu categories.
+- **Order Management** – Create and manage customer orders efficiently.
+- **Billing and Payments** – Generate bills and process sales transactions.
+- **Sales Management** – Maintain sales records and track restaurant transactions.
+- **User-Friendly Interface** – Provide a simple and convenient experience for restaurant staff.
+- **Restaurant Operations** – Support smoother daily workflows and improve service efficiency.
 
 ## Project Objectives
-- Simplify daily sales operations.
-- Improve inventory tracking and management.
-- Reduce manual errors in sales transactions.
-- Provide an efficient and reliable solution for retail business operations.
 
-## Technologies Used
-Add the programming languages, frameworks, database, and tools used to develop this project.
+- Automate restaurant ordering and billing processes.
+- Reduce manual work and minimize transaction errors.
+- Improve the accuracy of sales and order records.
+- Enhance the efficiency of daily restaurant operations.
+
+## Project Purpose
+
+This project was developed to apply software development concepts to a real-world business scenario, demonstrating practical skills in application development, data management, and business process automation.
+
 
 <img width="1916" height="900" alt="Screenshot 2026-10-17 181157" src="https://github.com/user-attachments/assets/3d1f9bb9-97d4-439c-b34a-07a8e74a8316" />
 <img width="1917" height="890" alt="Screenshot 2026-10-17 181219" src="https://github.com/user-attachments/assets/0a06bd73-21c6-4f37-865f-83416aa2fd89" />
